@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+usage () {
+    echo "Usage: "$0" <args> [optional] ..."
+    return 1
+}
+
+if [ "$#" -ne 1 ]; then
+    usage
+fi
+
+set -x; echo placeholder
