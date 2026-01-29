@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: skeep <file>"
+    return 1
+fi
+
+files=$(git diff --name-only | grep -v "$1")
+
+set -x; git stash push $files
